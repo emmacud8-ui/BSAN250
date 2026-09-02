@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4f6f8">
+  <title>lineup — Sports betting operations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><span class="brand-mark"><i data-lucide="activity"></i></span><span>lineup</span></div>
+      <div class="workspace-switcher"><span class="avatar avatar-green">LM</span><span><strong>Lumen Markets</strong><small>Workspace</small></span><i data-lucide="chevrons-up-down"></i></div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <p class="nav-label">Workspace</p>
+        <button class="nav-item active" data-view="overview"><i data-lucide="layout-dashboard"></i><span>Overview</span></button>
+        <button class="nav-item" data-view="bets"><i data-lucide="ticket"></i><span>All bets</span><span class="nav-count">24</span></button>
+        <button class="nav-item" data-view="insights"><i data-lucide="chart-no-axes-combined"></i><span>Insights</span></button>
+        <p class="nav-label">Manage</p>
+        <button class="nav-item" data-view="team"><i data-lucide="users"></i><span>Team</span></button>
+        <button class="nav-item" data-view="integrations"><i data-lucide="blocks"></i><span>Integrations</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="promo"><span class="promo-icon"><i data-lucide="sparkles"></i></span><strong>Pro plan</strong><p>Unlock sharper edges with custom reporting.</p><button>View upgrade <i data-lucide="arrow-up-right"></i></button></div>
+        <button class="nav-item"><i data-lucide="settings-2"></i><span>Settings</span></button>
+        <div class="user-row"><span class="avatar avatar-blue">EC</span><span><strong>Emma Carter</strong><small>Admin</small></span><i data-lucide="more-horizontal"></i></div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar"><button class="icon-button menu-toggle" id="menuToggle" aria-label="Open menu"><i data-lucide="menu"></i></button><div class="breadcrumbs"><span>Workspace</span><i data-lucide="chevron-right"></i><strong>Overview</strong></div><div class="top-actions"><button class="icon-button" aria-label="Help"><i data-lucide="circle-help"></i></button><button class="icon-button notification" aria-label="Notifications"><i data-lucide="bell"></i><b></b></button><span class="top-avatar">EC</span></div></header>
+      <div class="page-wrap">
+        <section class="page-heading"><div><p class="eyebrow">Wednesday, September 18, 2024</p><h1>Good morning, Emma <span>↗</span></h1><p class="subheading">Here's what is happening across your book today.</p></div><button class="primary-button" id="addBetButton"><i data-lucide="plus"></i> Add a bet</button></section>
+
+        <div id="overviewView" class="view-panel">
+          <section class="metric-grid">
+            <article class="metric-card"><div class="metric-top"><span>Total staked</span><button class="more-button" aria-label="More options"><i data-lucide="more-horizontal"></i></button></div><div class="metric-value">$48,240<span class="trend positive"><i data-lucide="trending-up"></i> 12.8%</span></div><p>vs. $42,760 last month</p></article>
+            <article class="metric-card"><div class="metric-top"><span>Net profit</span><button class="more-button" aria-label="More options"><i data-lucide="more-horizontal"></i></button></div><div class="metric-value">$8,643<span class="trend positive"><i data-lucide="trending-up"></i> 8.4%</span></div><p>vs. $7,973 last month</p></article>
+            <article class="metric-card"><div class="metric-top"><span>Win rate</span><button class="more-button" aria-label="More options"><i data-lucide="more-horizontal"></i></button></div><div class="metric-value">64.2%<span class="trend positive"><i data-lucide="trending-up"></i> 3.1%</span></div><p>from 142 settled bets</p></article>
+            <article class="metric-card highlight"><div class="metric-top"><span>Active exposure</span><span class="live-dot">Live</span></div><div class="metric-value">$12,410</div><p>Across 24 open positions</p><div class="exposure-bar"><span></span></div></article>
+          </section>
+
+          <div class="dashboard-grid">
+            <section class="panel performance-panel"><div class="panel-heading"><div><h2>Performance</h2><p>Net profit and staked volume</p></div><div class="segmented"><button class="selected">30D</button><button>90D</button><button>1Y</button></div></div><div class="chart-legend"><span><i class="legend-profit"></i>Net profit</span><span><i class="legend-staked"></i>Staked</span></div><div class="chart-wrap"><svg class="chart" viewBox="0 0 720 250" preserveAspectRatio="none" aria-label="Performance chart"><defs><linearGradient id="areaFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#a8db57" stop-opacity=".28"/><stop offset="1" stop-color="#a8db57" stop-opacity="0"/></linearGradient></defs><g class="grid-lines"><line x1="0" y1="22" x2="720" y2="22"/><line x1="0" y1="78" x2="720" y2="78"/><line x1="0" y1="134" x2="720" y2="134"/><line x1="0" y1="190" x2="720" y2="190"/></g><path class="chart-area" d="M0,190 C45,180 55,165 90,172 S138,133 175,151 S213,117 250,132 S295,84 335,105 S370,95 408,111 S443,58 480,77 S515,103 548,78 S580,45 615,64 S660,36 720,28 L720,220 L0,220 Z"/><path class="line secondary" d="M0,210 C45,203 60,186 90,197 S140,172 175,188 S215,156 250,169 S290,135 335,149 S380,131 408,150 S445,121 480,131 S515,143 548,119 S590,94 615,111 S670,89 720,83"/><path class="line primary" d="M0,190 C45,180 55,165 90,172 S138,133 175,151 S213,117 250,132 S295,84 335,105 S370,95 408,111 S443,58 480,77 S515,103 548,78 S580,45 615,64 S660,36 720,28"/><circle cx="615" cy="64" r="5" class="chart-point"/></svg><div class="chart-labels"><span>Aug 20</span><span>Aug 27</span><span>Sep 03</span><span>Sep 10</span><span>Sep 18</span></div></div></section>
+            <section class="panel allocation-panel"><div class="panel-heading"><div><h2>Sport allocation</h2><p>Staked volume by category</p></div><button class="more-button"><i data-lucide="more-horizontal"></i></button></div><div class="donut-wrap"><div class="donut"><div><strong>48.2k</strong><small>Total staked</small></div></div></div><div class="allocation-list"><div><span><i class="sport-dot football"></i>Football</span><strong>42%</strong></div><div><span><i class="sport-dot basketball"></i>Basketball</span><strong>28%</strong></div><div><span><i class="sport-dot tennis"></i>Tennis</span><strong>18%</strong></div><div><span><i class="sport-dot other"></i>Other</span><strong>12%</strong></div></div></section>
+          </div>
+
+          <section class="panel bets-panel"><div class="panel-heading bets-heading"><div><h2>Recent bets</h2><p>Your latest activity across all markets</p></div><button class="text-button" data-view-target="bets">View all bets <i data-lucide="arrow-up-right"></i></button></div><div class="table-tools"><div class="search"><i data-lucide="search"></i><input id="searchInput" placeholder="Search bets..." aria-label="Search bets"></div><div class="filter-set"><button class="filter-button"><i data-lucide="calendar-days"></i> This month <i data-lucide="chevron-down"></i></button><button class="filter-button"><i data-lucide="list-filter"></i> Filter <i data-lucide="chevron-down"></i></button></div></div><div class="table-scroll"><table><thead><tr><th>Event</th><th>Market</th><th>Stake</th><th>Odds</th><th>Result</th><th>Profit / loss</th></tr></thead><tbody id="betsTable"><tr><td><div class="event"><span class="team-icon red">SF</span><span><strong>49ers vs. Vikings</strong><small>NFL · Sep 18, 2024</small></span></div></td><td>Moneyline · 49ers</td><td>$520</td><td class="mono">-145</td><td><span class="status open">Open</span></td><td class="mono muted">—</td></tr><tr><td><div class="event"><span class="team-icon orange">NY</span><span><strong>Yankees vs. Red Sox</strong><small>MLB · Sep 17, 2024</small></span></div></td><td>Run line · Yankees -1.5</td><td>$350</td><td class="mono">+120</td><td><span class="status won">Won</span></td><td class="mono profit">+$420</td></tr><tr><td><div class="event"><span class="team-icon blue">BC</span><span><strong>Bulls vs. Celtics</strong><small>NBA · Sep 16, 2024</small></span></div></td><td>Spread · Celtics -4.5</td><td>$275</td><td class="mono">-110</td><td><span class="status lost">Lost</span></td><td class="mono loss">-$275</td></tr><tr><td><div class="event"><span class="team-icon purple">WM</span><span><strong>W. Masters vs. J. Smith</strong><small>ATP · Sep 15, 2024</small></span></div></td><td>Match winner · Masters</td><td>$180</td><td class="mono">+155</td><td><span class="status won">Won</span></td><td class="mono profit">+$279</td></tr></tbody></table></div></section>
+        </div>
+        <section id="emptyView" class="empty-view" hidden><div class="empty-icon"><i data-lucide="construction"></i></div><h2 id="emptyTitle">All bets</h2><p>This view is ready for your next move. Your workspace data will appear here.</p><button class="primary-button" id="emptyAction"><i data-lucide="plus"></i> Add a bet</button></section>
+      </div>
+    </main>
+  </div>
+  <div class="modal-backdrop" id="modal" hidden><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-header"><div><p class="eyebrow">New position</p><h2 id="modalTitle">Add a bet</h2></div><button class="icon-button" id="closeModal" aria-label="Close"><i data-lucide="x"></i></button></div><form id="betForm"><label>Event<input name="event" required placeholder="e.g. Chiefs vs. Ravens"></label><div class="form-row"><label>Sport<select name="sport"><option>Football</option><option>Basketball</option><option>Baseball</option><option>Tennis</option></select></label><label>Stake<input name="stake" type="number" min="1" required placeholder="$ 0"></label></div><div class="form-row"><label>Market<input name="market" required placeholder="Moneyline · Team"></label><label>Odds<input name="odds" required placeholder="-110"></label></div><button class="primary-button form-submit" type="submit">Save bet <i data-lucide="arrow-right"></i></button></form></div></div>
+  <div class="toast" id="toast"><i data-lucide="check-circle-2"></i><span>Bet added to your workspace</span></div>
+  <script src="app.js"></script>
+</body>
+</html>
